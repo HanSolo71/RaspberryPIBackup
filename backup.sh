@@ -59,3 +59,8 @@ printf "Deleting Tar Files\n \n"
 rm /backup/data/*
 
 printf "\n \nBackup Complete\n \n"
+
+#update system
+printf "Updating System\n \n"
+sudo apt update
+sudo apt upgrade -y
