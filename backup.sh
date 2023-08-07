@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #stop services
 printf "Stopping Services\n \n"
