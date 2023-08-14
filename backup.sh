@@ -26,7 +26,7 @@ printf "End Pi Hole Backup\n \n"
 
 #create backup for everything else
 printf "Backup Everything Else\n \n"
-tar -cpf /backup/data/"$(date '+%Y-%m-%d')backup.tar" --exclude=/etc/pihole/ --exclude=/backup/data --exclude=/backup/final --exclude=/proc --exclude=/tmp --exclude=/mnt --exclude=/dev --exclude=/sys --exclude=/run --exclude=/media --exclude=/var/log --exclude=/var/cache/apt/archives --exclude=/usr/src/linux-headers* --exclude=/home/*/.gvfs --exclude=/home/*/.cache --exclude=/home/*/.local/share/Trash --exclude=/boot --exclude=/home/unms/data/firmwares --exclude=/usr/bin --exclude=/bin --exclude=/var/lib/docker --exclude=/var/lib/snapd --exclude=/var/cache --exclude=/usr/lib --exclude=/var/lib/apt --exclude=/usr/share --exclude=/usr/src --exclude=/usr/sbin --exclude=/snap --exclude=/usr/include /
+tar -cpf /backup/data/"$(date '+%Y-%m-%d')backup.tar" --exclude=/etc/pihole/ --exclude=/backup/data --exclude=/swapfile --exclude=/backup/final --exclude=/proc --exclude=/tmp --exclude=/mnt --exclude=/dev --exclude=/sys --exclude=/run --exclude=/media --exclude=/var/log --exclude=/var/cache/apt/archives --exclude=/usr/src/linux-headers* --exclude=/home/*/.gvfs --exclude=/home/*/.cache --exclude=/home/*/.local/share/Trash --exclude=/boot --exclude=/home/unms/data/firmwares --exclude=/usr/bin --exclude=/bin --exclude=/var/lib/docker --exclude=/var/lib/snapd --exclude=/var/cache --exclude=/usr/lib --exclude=/var/lib/apt --exclude=/usr/share --exclude=/usr/src --exclude=/usr/sbin --exclude=/snap --exclude=/usr/include /
 dpkg --get-selections > /backup/data/$(date '+%Y-%m-%d')Package.list
 tar -cpf /backup/data/"$(date '+%Y-%m-%d')sources.list.tar" /etc/apt/sources.list*
 apt-key exportall > /backup/data/$(date '+%Y-%m-%d')Repo.keys
